@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Vill8</string>
+
+    <string name="login_as_village">Masuk sebagai Desa</string>
+    <string name="email">Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="login">Masuk</string>
+
+    <string name="register_as_village">Daftar sebagai Desa</string>
+    <string name="nama_desa">Nama Desa</string>
+    <string name="alamat_desa">Alamat Desa</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="kota_kabupaten">Kota / Kabupaten</string>
+    <string name="lengkap_profil_narahubung_desa">Lengkapi Profil Narahubung Desa</string>
+    <string name="nama_narahubung">Nama Narahubung</string>
+    <string name="nomor_ponsel">Nomor Ponsel Narahubung</string>
+    <string name="alamat_email">Alamat email</string>
+    <string name="register">Daftar Akun</string>
+    <string name="next">Berikutnya</string>
+    <string name="previous">Sebelumnya</string>
+</resources>
