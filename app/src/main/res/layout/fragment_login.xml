@@ -4,39 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginActivity">
+    tools:context=".ui.login.LoginFragment">
 
     <TextView
-        android:id="@+id/headlineTv"
+        android:id="@+id/loginTitleTv"
         android:layout_width="@dimen/default_size"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_l"
         android:layout_marginEnd="@dimen/margin_l"
-        android:fontFamily="@font/montserrat_semi_bold"
+        android:fontFamily="@font/montserrat_bold"
         android:text="@string/login_as_village"
-        android:textSize="@dimen/text_size_l"
-        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_xl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/horizontalGuideline2" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nomorPonselEdtLayout"
-        style="?attr/textInputFilledStyle"
+        android:id="@+id/emailEdtLayout"
         android:layout_width="@dimen/default_size"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_l"
-        android:layout_marginTop="@dimen/margin_xl"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="@dimen/margin_l"
         android:hint="@string/email"
-        app:boxBackgroundColor="@null"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headlineTv">
+        app:layout_constraintTop_toBottomOf="@+id/loginTitleTv">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nomorPonselEdt"
+            android:id="@+id/phoneNumberEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -47,23 +45,21 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/provinsiEdtLayout"
-        style="?attr/textInputFilledStyle"
+        android:id="@+id/passwordEdtLayout"
         android:layout_width="@dimen/default_size"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_l"
         android:layout_marginTop="@dimen/margin_s"
         android:layout_marginEnd="@dimen/margin_l"
         android:hint="@string/password"
-        app:boxBackgroundColor="@null"
         app:endIconMode="password_toggle"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomorPonselEdtLayout">
+        app:layout_constraintTop_toBottomOf="@+id/emailEdtLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/provinsiEdt"
+            android:id="@+id/emailEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -78,29 +74,40 @@
         android:id="@+id/loginBtn"
         android:layout_width="@dimen/default_size"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:fontFamily="@font/montserrat_medium"
+        android:layout_marginStart="@dimen/margin_l"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="@dimen/margin_l"
+        android:fontFamily="@font/montserrat_regular"
         android:padding="@dimen/padding_m"
         android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/provinsiEdtLayout"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEdtLayout"
         app:shapeAppearance="@style/roundCorner" />
 
-
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/progressbar"
+    <TextView
+        android:id="@+id/dontHaveAccountTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        android:layout_marginTop="@dimen/margin_m"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/dont_have_account"
+        app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="@+id/loginBtn"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+
+    <TextView
+        android:id="@+id/goToRegisterTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/register_here"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="@+id/dontHaveAccountTv"
+        app:layout_constraintStart_toEndOf="@+id/dontHaveAccountTv"
+        app:layout_constraintTop_toTopOf="@+id/dontHaveAccountTv" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/verticalGuideline"
@@ -122,6 +129,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.25" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,64 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.RegisterProfileActivity">
+    tools:context=".ui.register.RegisterFragment">
 
     <TextView
-        android:id="@+id/headlineTv"
+        android:id="@+id/loginTitleTv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_l"
         android:layout_marginEnd="@dimen/margin_l"
-        android:fontFamily="@font/montserrat_semi_bold"
-        android:text="@string/lengkap_profil_narahubung_desa"
-        android:textSize="@dimen/text_size_l"
-        android:textStyle="bold"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/register_as_village"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_size_xl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/horizontalGuideline2" />
 
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameEdtLayout"
-        style="?attr/textInputFilledStyle"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_l"
-        android:layout_marginTop="@dimen/margin_xl"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="@dimen/margin_l"
-        app:boxBackgroundColor="@null"
+        android:hint="@string/nama_narahubung"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headlineTv">
+        app:layout_constraintTop_toBottomOf="@+id/loginTitleTv">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameEdt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:fontFamily="@font/montserrat_regular"
-            android:hint="@string/nama_narahubung"
-            android:inputType="textPersonName"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nomorPonselEdtLayout"
-        style="?attr/textInputFilledStyle"
-        android:layout_width="@dimen/default_size"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_l"
-        android:layout_marginEnd="@dimen/margin_l"
-        android:hint="@string/nomor_ponsel"
-        app:boxBackgroundColor="@null"
-        app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameEdtLayout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nomorPonselEdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -72,19 +46,41 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailEdtLayout"
-        style="?attr/textInputFilledStyle"
+        android:id="@+id/phoneNumberEdtLayout"
         android:layout_width="@dimen/default_size"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_l"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/margin_l"
-        android:hint="@string/email"
-        app:boxBackgroundColor="@null"
+        android:hint="@string/nomor_hp_narahubung"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomorPonselEdtLayout">
+        app:layout_constraintTop_toBottomOf="@+id/nameEdtLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneNumberEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_regular"
+            android:inputType="number"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailEdtLayout"
+        android:layout_width="@dimen/default_size"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_l"
+        android:layout_marginTop="@dimen/margin_s"
+        android:layout_marginEnd="@dimen/margin_l"
+        android:hint="@string/email_narahubung"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumberEdtLayout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailEdt"
@@ -99,12 +95,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordEdtLayout"
-        style="?attr/textInputFilledStyle"
         android:layout_width="@dimen/default_size"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_l"
-        android:layout_marginTop="@dimen/margin_s"
-        android:layout_marginEnd="@dimen/margin_l"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:hint="@string/password"
         app:boxBackgroundColor="@null"
         app:endIconMode="password_toggle"
@@ -125,47 +120,45 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/backToBtn"
-        android:layout_width="0dp"
+        android:id="@+id/registerBtn"
+        android:layout_width="@dimen/default_size"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_l"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:fontFamily="@font/montserrat_medium"
-        android:padding="@dimen/padding_m"
-        android:text="@string/previous"
-        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEdtLayout"
-        app:shapeAppearance="@style/roundCorner" />
-
-
-    <Button
-        android:id="@+id/registerBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        android:fontFamily="@font/montserrat_medium"
+        android:layout_marginEnd="@dimen/margin_l"
+        android:fontFamily="@font/montserrat_regular"
         android:padding="@dimen/padding_m"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEdtLayout"
         app:shapeAppearance="@style/roundCorner" />
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/progressbar"
+
+    <TextView
+        android:id="@+id/alreadyHaveAccountTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        android:layout_marginTop="@dimen/margin_m"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/already_have_account"
+        app:layout_constraintEnd_toEndOf="@+id/registerBtn"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="@+id/registerBtn"
+        app:layout_constraintTop_toBottomOf="@+id/registerBtn" />
+
+    <TextView
+        android:id="@+id/goToLoginTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xs"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/login_here"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="@+id/alreadyHaveAccountTv"
+        app:layout_constraintStart_toEndOf="@+id/alreadyHaveAccountTv"
+        app:layout_constraintTop_toTopOf="@+id/alreadyHaveAccountTv" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/verticalGuideline"
